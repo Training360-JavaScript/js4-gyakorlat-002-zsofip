@@ -19,8 +19,8 @@ const getUserData = () => userData;
  * @param {string} url a távoli erőforrás címe, ahonnan lekérjük az adatokat
  */
 const getUsers = (url = '') => {
-    fetch('')
-        .then(() => {})
+    fetch(url)
+        .then(response => response.json())
         .then(data => userData = data)
         .catch(
             () => console.log(`Error: ${url} is not found!`),
@@ -32,6 +32,6 @@ const getUsers = (url = '') => {
  * CSAK A 35. SORBAN DOLGOZZ!
  */
 export {
-    
+    getUsers,
     getUserData,
 }
